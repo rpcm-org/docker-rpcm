@@ -8,7 +8,7 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD
         volumes:
-            - /srv/fivem/db:/var/lib/mysql
+            - /srv/rpcm/db/:/var/lib/mysql
         networks:
             - rpcm_net
 
@@ -17,10 +17,48 @@ services:
             - rpcm_db
         image: adminer
         restart: always
+        environment:
+            - VIRTUAL_HOST=$RPCM_ADMINER_HOST
+            - VIRTUAL_PORT=8080
+            - LETSENCRYPT_HOST=$RPCM_ADMINER_HOST
+            - LETSENCRYPT_EMAIL
         ports:
-            - 8080:8080
+            - 8080
         links:
             - rpcm_db:rpcm_db
+        networks:
+            - rpcm_net
+
+    nginx-proxy:
+        depends_on:
+            - db_adminer
+        image: jwilder/nginx-proxy
+        volumes:
+            - /srv/rpcm/nginx/html:/usr/share/nginx/html
+            - /srv/rpcm/nginx/certs:/etc/nginx/certs:ro
+            - vhost:/etc/nginx/vhost.d
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+        ports:
+            - 80:80
+            - 443:443
+        labels:
+            - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true"
+        links:
+            - db_adminer:db_adminer
+        networks:
+            - rpcm_net
+
+    le-companion:
+        depends_on:
+            - nginx-proxy
+        image: jrcs/letsencrypt-nginx-proxy-companion
+        volumes:
+            - /srv/rpcm/nginx/certs:/etc/nginx/certs:rw
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+            - vhost:/etc/nginx/vhost.d
+            - /srv/rpcm/nginx/html:/usr/share/nginx/html
+        links:
+            - nginx-proxy:nginx-proxy
         networks:
             - rpcm_net
 
@@ -45,7 +83,9 @@ services:
         networks:
             - rpcm_net
 
-networks:
+volumes:
+    vhost:
 
+networks:
     rpcm_net:
         driver: bridge
