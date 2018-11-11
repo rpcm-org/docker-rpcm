@@ -22,6 +22,7 @@ To deploy RP Crucial Mode with whole ecosystem, please follow those steps.
 ### First Deploy
 
     source .rpcm.env
+    sudo docker-compose pull
     sudo -E docker-compose up -d --build
 
 ### Hints

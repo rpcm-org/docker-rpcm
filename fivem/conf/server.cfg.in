@@ -32,7 +32,7 @@ sets tags "default"
 #sets banner_connecting "http://url.to/image.png"
 
 # Set your server's hostname
-sv_hostname "{RPCM_HOSTNAME}"
+sv_hostname {RPCM_HOSTNAME}
 
 # Nested configs!
 #exec server_internal.cfg
@@ -63,4 +63,4 @@ sv_endpointprivacy true
 sv_maxclients {RPCM_MAXCLIENTS}
 
 # License key for your server (https://keymaster.fivem.net)
-sv_licenseKey "{RPCM_LICENSEKEY}"
+sv_licenseKey {RPCM_LICENSEKEY}

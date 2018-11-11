@@ -9,7 +9,7 @@ export RPCM_DB_IP=`getent hosts rpcm_db | awk '{ print $1 }'`
 if [ ! -f config_initialized.mark ]; then
     cp conf/server.cfg.in server-data/server.cfg
     sed -i -e "s/{RPCM_HOSTNAME}/'${RPCM_HOSTNAME}'/g" server-data/server.cfg
-    sed -i -e "s/{RPCM_MAXCLIENTS}/'${RPCM_MAXCLIENTS}'/g" server-data/server.cfg
+    sed -i -e "s/{RPCM_MAXCLIENTS}/${RPCM_MAXCLIENTS}/g" server-data/server.cfg
     sed -i -e "s/{RPCM_LICENSEKEY}/'${RPCM_LICENSEKEY}'/g" server-data/server.cfg
     touch mark.config
 fi
