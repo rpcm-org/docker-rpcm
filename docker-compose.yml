@@ -10,7 +10,7 @@ services:
         volumes:
             - /srv/fivem/db:/var/lib/mysql
         networks:
-            - rpcm
+            - rpcm_net
 
     db_adminer:
         depends_on:
@@ -22,7 +22,7 @@ services:
         links:
             - rpcm_db:rpcm_db
         networks:
-            - rpcm
+            - rpcm_net
 
     fivem:
         depends_on:
@@ -46,5 +46,6 @@ services:
             - rpcm_net
 
 networks:
+
     rpcm_net:
         driver: bridge
