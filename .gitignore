@@ -1,2 +1,5 @@
+# Environment file with credentials
+.rpcm.env
+
 # Linux backup files
 *~
