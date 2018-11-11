@@ -3,7 +3,7 @@ MAINTAINER celestian "petr.celestian@gmail.com"
 
 RUN echo "fastestmirror=true" >> /etc/dnf/dnf.conf
 RUN dnf update -y
-RUN dnf install -y wget xz; dnf clean all
+RUN dnf install -y wget xz git mariadb; dnf clean all
 
 COPY . /app/fivem
 WORKDIR /app/fivem

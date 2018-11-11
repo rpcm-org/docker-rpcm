@@ -12,3 +12,6 @@ tar xf ./fx.tar.xz \
     --exclude alpine/sys \
     -C ./server
 rm -f ./fx.tar.xz
+
+# branch: master | hash: '1624342'
+git clone https://github.com/citizenfx/cfx-server-data server-data
