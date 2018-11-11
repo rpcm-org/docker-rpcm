@@ -1,0 +1,13 @@
+COMPONENT: Subject
+
+label: feature
+label: architecture
+label: bug
+label: technical debt
+
+Explanation
+
+Resolves #xx
+
+# Try to keep the subject line within 52 chars ----|
+# Also please try to not exceed 72 characters of length for the body --|
