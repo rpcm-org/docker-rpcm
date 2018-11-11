@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+
+    rpcm_db:
+        image: mariadb
+        restart: always
+        environment:
+            - RPCM_DB_ROOT_PASSWORD
+        volumes:
+            - /srv/fivem/db:/var/lib/mysql
+        networks:
+            - rpcm
+
+    db_adminer:
+        depends_on:
+            - rpcm_db
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
+        links:
+            - rpcm_db:rpcm_db
+        networks:
+            - rpcm
+
+    fivem:
+        depends_on:
+            - rpcm_db
+        image: rpcmorg/fivem
+        environment:
+            - RPCM_LICENSEKEY
+            - RPCM_HOSTNAME
+            - RPCM_MAXCLIENTS
+            - RPCM_DB_ROOT_PASSWORD
+            - RPCM_DB_NAME
+            - RPCM_DB_USER
+            - RPCM_DB_PASS
+        ports:
+            - "30120:30120"
+            - "30120:30120/udp"
+        links:
+            - rpcm_db:rpcm_db
+        restart: always
+        networks:
+            - rpcm_net
+
+networks:
+    rpcm_net:
+        driver: bridge
