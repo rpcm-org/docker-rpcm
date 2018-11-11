@@ -13,5 +13,10 @@ tar xf ./fx.tar.xz \
     -C ./server
 rm -f ./fx.tar.xz
 
-# branch: master | hash: '1624342'
+# CFX-SERVER-DATA
+# branch: master | hash: 1624342
 git clone https://github.com/citizenfx/cfx-server-data server-data
+
+# FIVEM-MYSQL-ASYNC
+# branch: master | hash: 296a2c6
+git clone https://github.com/brouznouf/fivem-mysql-async server-data/resources/mysql-async

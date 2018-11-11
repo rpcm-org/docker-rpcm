@@ -12,6 +12,10 @@ start hardcap
 start rconlog
 start scoreboard
 
+#Starting database plugin
+set mysql_connection_string "server={RPCM_DB_IP};database={RPCM_DB_NAME};userid={RPCM_DB_USER};password={RPCM_DB_PASS}"
+start mysql-async
+
 # This allows players to use scripthook based plugins such as lambda menu.
 # Set this to 0 to disallow scripthook.
 sv_scriptHookAllowed 0
