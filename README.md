@@ -6,6 +6,9 @@ To deploy RP Crucial Mode with whole ecosystem, please follow those steps.
 
 ### Pre-Deploy
 
+    # Clone repository
+    git clone https://github.com/rpcm-org/docker-rpcm.git
+
     # Edit environemt variables
     cp contrib/rpcm.env .rpcm.env
     vim .rpcm.env
@@ -15,16 +18,18 @@ To deploy RP Crucial Mode with whole ecosystem, please follow those steps.
 
 ### First Deploy
 
-    git clone https://github.com/rpcm-org/docker-rpcm.git
     source .rpcm.env
     sudo -E docker-compose up -d --build
 
 ### Hints
 
-    # interactive bash in container
+    # To stop docker-compose ecosystem
+    docker-compose down
+
+    # Interactive bash in container
     sudo docker exec -ti <container> /usr/bin/bash
 
-    # to remove database data
+    # To remove database data
     sudo rm -fR /srv/fivem/db/*
 
 ## Docker containers
