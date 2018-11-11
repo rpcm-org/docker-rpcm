@@ -9,6 +9,9 @@ To deploy RP Crucial Mode with whole ecosystem, please follow those steps.
     # Clone repository
     git clone https://github.com/rpcm-org/docker-rpcm.git
 
+    # Change the directory
+    cd docker-rpcm/
+
     # Edit environemt variables
     cp contrib/rpcm.env .rpcm.env
     vim .rpcm.env
