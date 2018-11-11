@@ -6,7 +6,7 @@ services:
         image: mariadb
         restart: always
         environment:
-            - RPCM_DB_ROOT_PASSWORD
+            - MYSQL_ROOT_PASSWORD
         volumes:
             - /srv/fivem/db:/var/lib/mysql
         networks:
