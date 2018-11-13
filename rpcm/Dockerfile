@@ -1,10 +1,8 @@
 FROM rpcmorg/fivem
 MAINTAINER celestian "petr.celestian@gmail.com"
 
-RUN apk add --no-cache bash git mariadb-client
-
-COPY . /app/fivem
 WORKDIR /app/fivem
+COPY ./conf/server.cfg.in conf
 
 ARG RPCM_LICENSEKEY
 ARG RPCM_HOSTNAME
