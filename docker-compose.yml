@@ -62,10 +62,10 @@ services:
         networks:
             - rpcm_net
 
-    fivem:
+    rpcm:
         depends_on:
             - rpcm_db
-        image: rpcmorg/fivem
+        image: rpcmorg/rpcm
         environment:
             - RPCM_LICENSEKEY
             - RPCM_HOSTNAME
