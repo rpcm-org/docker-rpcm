@@ -62,7 +62,7 @@ services:
         networks:
             - rpcm_net
 
-    rpcm:
+    fivem:
         depends_on:
             - rpcm_db
         image: rpcmorg/rpcm
