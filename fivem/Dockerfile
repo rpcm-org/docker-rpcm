@@ -1,9 +1,7 @@
-FROM fedora:29
+FROM alpine:3.8
 MAINTAINER celestian "petr.celestian@gmail.com"
 
-RUN echo "fastestmirror=true" >> /etc/dnf/dnf.conf
-RUN dnf update -y
-RUN dnf install -y wget xz git mariadb; dnf clean all
+RUN apk add --no-cache bash wget xz git mariadb-client
 
 COPY . /app/fivem
 WORKDIR /app/fivem
