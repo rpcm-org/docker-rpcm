@@ -1,8 +1,8 @@
 FROM rpcmorg/fivem
 MAINTAINER celestian "petr.celestian@gmail.com"
 
+COPY . /app/fivem
 WORKDIR /app/fivem
-COPY ./conf/server.cfg.in conf
 
 ARG RPCM_LICENSEKEY
 ARG RPCM_HOSTNAME
@@ -12,7 +12,7 @@ ARG RPCM_DB_NAME
 ARG RPCM_DB_USER
 ARG RPCM_DB_PASS
 
-RUN git clone https://github.com/rpcm-org/rpcm.git server-data/resources/rpcm
+RUN ./docker/git_clone_branch.sh https://github.com/rpcm-org/rpcm.git server-data/resources/rpcm
 
 # Expose FiveM port
 EXPOSE 30120
