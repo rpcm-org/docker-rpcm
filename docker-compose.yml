@@ -74,6 +74,9 @@ services:
             - RPCM_DB_NAME
             - RPCM_DB_USER
             - RPCM_DB_PASS
+            - RPCM_LANGUAGE
+            - RPCM_DB_CHARSET
+            - RPCM_DB_COLLATE
         ports:
             - "30120:30120"
             - "30120:30120/udp"
