@@ -6,7 +6,7 @@ services:
         image: mariadb
         restart: always
         environment:
-            - MYSQL_ROOT_PASSWORD
+            - MYSQL_ROOT_PASSWORD=$RPCM_DB_ROOT_PASSWORD
         volumes:
             - /srv/rpcm/db/:/var/lib/mysql
         networks:
