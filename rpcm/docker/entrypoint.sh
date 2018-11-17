@@ -52,5 +52,5 @@ rm ../fivem_0.pid
 sleep 5
 
 # Final start of FiveM
-touch mark.fivem
+touch ../mark.rpcm
 bash /app/fivem/server/run.sh +exec server.cfg >> ../fivem.log 2>&1
