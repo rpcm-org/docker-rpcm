@@ -54,4 +54,4 @@ sleep 5
 
 # Final start of FiveM
 touch ../mark.rpcm
-bash CPATH='/usr/lib/lua/5.1/' /app/fivem/server/run.sh +exec server.cfg >> ../fivem.log 2>&1
+bash /app/fivem/server/run.sh +exec server.cfg >> ../fivem.log 2>&1
