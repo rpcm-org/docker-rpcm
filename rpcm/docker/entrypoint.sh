@@ -43,10 +43,6 @@ if [ ! -f mysql_initialized.mark ]; then
     sleep 2
 fi
 
-# luasql
-mkdir -p server-data/resources/rpcm/lib
-cp /usr/lib/lua/5.1/luasql/mysql.so server-data/resources/rpcm/lib
-
 # Start and stop FiveM
 cd server-data
 bash /app/fivem/server/run.sh +exec server.cfg >> ../fivem.log  2>&1 &
@@ -58,4 +54,4 @@ sleep 5
 
 # Final start of FiveM
 touch ../mark.rpcm
-bash /app/fivem/server/run.sh +exec server.cfg >> ../fivem.log 2>&1
+bash CPATH='/usr/lib/lua/5.1/' /app/fivem/server/run.sh +exec server.cfg >> ../fivem.log 2>&1
