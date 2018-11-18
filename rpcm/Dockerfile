@@ -4,7 +4,7 @@ MAINTAINER celestian "petr.celestian@gmail.com"
 COPY . /app/fivem
 WORKDIR /app/fivem
 
-RUN apk add --no-cache lua
+RUN apk add --no-cache lua lua-sql-mysql
 
 ARG RPCM_LICENSEKEY
 ARG RPCM_HOSTNAME
