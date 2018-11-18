@@ -14,7 +14,7 @@ ARG RPCM_DB_NAME
 ARG RPCM_DB_USER
 ARG RPCM_DB_PASS
 
-RUN ./docker/git_clone_branch.sh https://github.com/rpcm-org/rpcm.git server-data/resources/rpcm
+RUN ./docker/git_clone_branch.sh https://github.com/rpcm-org/rpcm.git server-data/resources/rpcm user_dev
 
 # Expose FiveM port
 EXPOSE 30120
