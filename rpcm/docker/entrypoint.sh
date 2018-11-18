@@ -12,6 +12,7 @@ if [ ! -f config_initialized.mark ]; then
     sed -i -e "s/{RPCM_MAXCLIENTS}/${RPCM_MAXCLIENTS}/g" server-data/server.cfg
     sed -i -e "s/{RPCM_LICENSEKEY}/${RPCM_LICENSEKEY}/g" server-data/server.cfg
 
+    sed -i -e "s/{RPCM_DB_NAME}/${RPCM_DB_IP}/g" server-data/server.cfg
     sed -i -e "s/{RPCM_DB_NAME}/${RPCM_DB_NAME}/g" server-data/server.cfg
     sed -i -e "s/{RPCM_DB_USER}/${RPCM_DB_USER}/g" server-data/server.cfg
     sed -i -e "s/{RPCM_DB_PASS}/${RPCM_DB_PASS}/g" server-data/server.cfg
