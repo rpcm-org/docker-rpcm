@@ -5,6 +5,13 @@ sleep 10
 export RPCM_LOCAL_IP=`getent hosts fivem | awk '{ print $1 }'`
 export RPCM_DB_IP=`getent hosts rpcm_db | awk '{ print $1 }'`
 
+# Lua PATHS (it is needed for luasql package)
+# final ;; ensure that default path will be appended by Lua
+export LUA_PATH=";;"
+export LUA_CPATH="./?.so;/usr/local/lib/lua/5.3/?.so;
+                  /usr/local/share/lua/5.3/?.so;
+                  /usr/lib/lua/5.3/?.so"
+
 # Configuration
 if [ ! -f config_initialized.mark ]; then
     cp conf/server.cfg.in server-data/server.cfg
