@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:edge
 MAINTAINER celestian "petr.celestian@gmail.com"
 
 RUN apk add --no-cache bash git py3-tox
