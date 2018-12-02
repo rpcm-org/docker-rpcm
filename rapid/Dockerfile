@@ -1,7 +1,7 @@
 FROM alpine:3.8
 MAINTAINER celestian "petr.celestian@gmail.com"
 
-RUN apk add --no-cache bash git
+RUN apk add --no-cache bash git py3-tox
 
 COPY . /app/rapid
 WORKDIR /app/rapid
