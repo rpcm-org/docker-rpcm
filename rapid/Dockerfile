@@ -12,6 +12,6 @@ RUN mkdir -p /app/rapid/var/
 RUN ./docker/git_clone_branch.sh https://github.com/rpcm-org/rapid.git source
 RUN cp -r source/* .
 RUN rm -fr source
-RUN tox -re py37
+RUN tox -re py36
 
 ENTRYPOINT ["docker/entrypoint.sh"]

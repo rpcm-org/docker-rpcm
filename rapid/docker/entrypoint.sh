@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source .tox/py37/bin/activate
+source .tox/py36/bin/activate
 python utils.py db_init ${RPCM_DB_FILE}
 uwsgi \
     --http 0.0.0.0:80 \
