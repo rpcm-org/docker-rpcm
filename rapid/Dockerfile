@@ -1,7 +1,7 @@
-FROM alpine:edge
+FROM python:3.6-alpine
 MAINTAINER celestian "petr.celestian@gmail.com"
 
-RUN apk add --no-cache bash git py3-tox
+RUN apk add --no-cache bash git
 
 COPY . /app/rapid
 WORKDIR /app/rapid
