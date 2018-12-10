@@ -8,7 +8,7 @@ WORKDIR /app/fivem
 
 # To check last FiveM version, please visit:
 # http://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/
-ARG RPCM_FIVEM_VERSION='807-a33d6db066568046a9a99b14b0fccb03bb978e2f'
+ARG RPCM_FIVEM_VERSION='910-527e7123f4da2cf18512387a22d7ecb0f7db903a'
 
 ARG RPCM_LICENSEKEY
 ARG RPCM_HOSTNAME
