@@ -3,7 +3,7 @@
 python setup.py develop
 python utils.py db_init ${RPCM_DB_FILE}
 uwsgi \
-    --http 0.0.0.0:80 \
+    --http 0.0.0.0:8080 \
     --wsgi-file main.py \
     --callable app \
     --master \
